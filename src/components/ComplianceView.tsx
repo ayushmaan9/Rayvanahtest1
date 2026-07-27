@@ -52,18 +52,18 @@ export default function ComplianceView() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-neutral-200/50 pb-5">
         <div>
           <span className="bg-emerald-500/10 text-emerald-600 text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
-            Risk & Law Compliance
+            RBI PA/PG & Regulatory Escrow
           </span>
           <h2 className="text-xl font-bold font-sans text-neutral-900 tracking-tight mt-1.5 animate-fade-in">
-            Compliance & KYC Portal
+            RBI Escrow & KYB Compliance Portal
           </h2>
           <p className="text-xs text-neutral-500 mt-1">
-            Real-time corporate merchant KYC onboarding, PEP screening registers, sanctions checks, and AML compliance audits.
+            Real-time merchant KYB onboarding, RBI Nodal Escrow audit logs, PEP screening registers, and DICGC 100% reserve verification.
           </p>
         </div>
         <div className="flex items-center gap-2 text-xs bg-emerald-50 text-emerald-700 px-3.5 py-1.5 rounded-lg border border-emerald-100 font-semibold">
           <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-          PCI-DSS Level 1 Master Node Validated
+          RBI PA/PG Nodal Escrow Audit Validated
         </div>
       </div>
 

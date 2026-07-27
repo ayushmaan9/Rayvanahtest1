@@ -97,13 +97,13 @@ export default function TreasuryView() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <span className="bg-emerald-500/10 text-emerald-600 text-[9px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider font-sans">
-            Liquidity Infrastructure
+            RBI Regulated Nodal Escrow
           </span>
           <h2 className="text-xl font-bold font-sans text-neutral-900 tracking-tight mt-1.5">
-            Financial Treasury Workspace
+            Nodal Escrow Treasury Workspace
           </h2>
           <p className="text-xs text-neutral-500 mt-1">
-            Maximize interest yield, execute real-time multi-currency swaps, and analyze liquid working capital reserves.
+            RBI mandatory 100% nodal reserve audit compliance, real-time multi-currency escrow balances, and auto-sweep yields.
           </p>
         </div>
         <div className="flex items-center gap-2 text-xs bg-emerald-50 text-emerald-700 px-3.5 py-1.5 rounded-lg border border-emerald-100 font-semibold shadow-xs">

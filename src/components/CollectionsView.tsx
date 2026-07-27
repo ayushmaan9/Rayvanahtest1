@@ -234,16 +234,16 @@ export default function CollectionsView({
             Inbound Cash
           </span>
           <h2 className="text-xl font-bold font-sans text-neutral-900 tracking-tight mt-1.5">
-            Rayvaanah PAY-IN Platform
+            Rayvaanah Escrow Pay-In Engine
           </h2>
           <p className="text-xs text-neutral-500 mt-1">
-            Global gateway optimization, smart routing rails, dunning revenue rescue, and dynamic UPI QR arrays.
+            RBI Nodal Escrow accounts, Virtual Account Numbering (VAN), dynamic UPI QR collections, smart routing, and tri-party escrow holdbacks.
           </p>
         </div>
         <div className="flex items-center gap-2">
           <label className="flex items-center gap-2 bg-neutral-100 px-3.5 py-1.5 rounded-lg border border-neutral-200 text-xs font-semibold select-none">
             <Cpu className={`w-4 h-4 ${smartRoutingOn ? 'text-emerald-500 animate-spin' : 'text-neutral-400'}`} />
-            <span className="text-neutral-700">Gateway Smart Routing:</span>
+            <span className="text-neutral-700">Nodal Escrow Routing:</span>
             <input 
               type="checkbox" 
               checked={smartRoutingOn} 
@@ -251,7 +251,7 @@ export default function CollectionsView({
               className="rounded text-emerald-600 focus:ring-emerald-500 w-4 h-4 select-none"
             />
             <span className={`font-bold ${smartRoutingOn ? 'text-emerald-600' : 'text-neutral-500'}`}>
-              {smartRoutingOn ? 'OPTIMIZED' : 'BYPASS'}
+              {smartRoutingOn ? 'ESCROW OPTIMIZED' : 'DIRECT BYPASS'}
             </span>
           </label>
         </div>

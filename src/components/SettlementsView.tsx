@@ -22,15 +22,15 @@ export default function SettlementsView() {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h2 className="text-xl font-semibold text-neutral-900 tracking-tight">Settlements Hub</h2>
-          <p className="text-xs text-neutral-500 mt-1">Configure and monitor automated payout ledger releases to designated clearing bank accounts</p>
+          <h2 className="text-xl font-semibold text-neutral-900 tracking-tight">Nodal Escrow Settlement Hub</h2>
+          <p className="text-xs text-neutral-500 mt-1">Automated T+0/T+1 Nodal Escrow fund releases to merchant clearing bank accounts with milestone locks</p>
         </div>
         <button 
           onClick={handleInstantSettlement}
           disabled={isProcessing || !settlements.some(s => s.status === 'scheduled')}
           className="flex items-center gap-2 bg-neutral-900 hover:bg-neutral-800 disabled:bg-neutral-200 text-white disabled:text-neutral-400 px-4 py-2 rounded-lg text-xs font-semibold shadow-xs transition-all cursor-pointer"
         >
-          {isProcessing ? 'Initiating wires...' : 'Initiate Instant Settlement Sweep'}
+          {isProcessing ? 'Initiating Escrow Wires...' : 'Initiate Instant Escrow Sweep'}
         </button>
       </div>
 

@@ -21,7 +21,7 @@ export default function AICopilotView() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     { 
       sender: 'assistant', 
-      text: "Welcome to Rayvaanah AI Copilot. I am your direct financial assistant connected to the Core Merchant money movement infrastructure platform. Ask me to formulate routing overrides, analyze liquidity runs, or generate dunning retry forecasts.", 
+      text: "Welcome to Rayvaanah Escrow Intelligence Copilot. I am your specialized AI assistant connected to the Nodal Escrow Vaults & Smart Contract Milestone infrastructure. Ask me to evaluate escrow milestone release conditions, audit nodal sweep variances, verify RBI PA/PG escrow reserves, or formulate tri-party holdback rules.", 
       timestamp: new Date().toLocaleTimeString().substring(0, 5) 
     }
   ]);
@@ -34,10 +34,10 @@ export default function AICopilotView() {
   }, [messages]);
 
   const promptSuggestions = [
-    "Analyze liquid working capital forecast for next 30 days",
-    "Identify optimization paths for cross-border card processing",
-    "Suggest failed payment recovery strategies for B2B invoices",
-    "Screen for suspicious beneficiaries and high velocity alarms"
+    "Verify RBI PA/PG Nodal Escrow reserve 100% compliance",
+    "Audit milestone release triggers for marketplace vendor payouts",
+    "Check suspicious escrow fund locks and chargeback holdbacks",
+    "Calculate daily auto-sweep interest yields across Nodal Vaults"
   ];
 
   const handleSend = async (textToSend: string) => {

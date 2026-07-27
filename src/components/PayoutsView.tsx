@@ -197,10 +197,10 @@ export default function PayoutsView({
             Outbound Cash
           </span>
           <h2 className="text-xl font-bold font-sans text-neutral-900 tracking-tight mt-1.5">
-            Rayvaanah PAY-OUT Infrastructure
+            Rayvaanah Escrow Payout & Disbursement Engine
           </h2>
           <p className="text-xs text-neutral-500 mt-1">
-            Vendor directories, employee payroll, split commission payouts, risk engines, and Maker-Checker escalations.
+            Nodal Escrow account disbursements, milestone releases, vendor split commissions, and multi-sig Maker-Checker approvals.
           </p>
         </div>
         <div className="flex items-center gap-2">
@@ -209,7 +209,7 @@ export default function PayoutsView({
             className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-3 py-2 rounded-lg text-xs"
           >
             <Plus className="w-4 h-4" />
-            Payout Workbench
+            Escrow Disburse Workbench
           </button>
         </div>
       </div>
@@ -217,12 +217,12 @@ export default function PayoutsView({
       {/* Payout sub-navigation tab list */}
       <div className="flex overflow-x-auto gap-2 border-b border-neutral-200 pb-px">
         {[
-          { id: 'dashboard', label: 'Payout Dashboard', icon: TrendingUp },
-          { id: 'beneficiary', label: 'Beneficiary Manager', icon: Users },
-          { id: 'workbench', label: 'Outbound Workbench', icon: Sliders },
-          { id: 'approvals', label: `Approval Center (${approvalTasks.filter(t => t.status === 'pending').length})`, icon: FileCheck },
-          { id: 'industries', label: 'Industries & Verticals', icon: Briefcase },
-          { id: 'risk_engine', label: 'Payout Risk Engine', icon: ShieldAlert }
+          { id: 'dashboard', label: 'Escrow Payout Dashboard', icon: TrendingUp },
+          { id: 'beneficiary', label: 'Escrow Beneficiary Directory', icon: Users },
+          { id: 'workbench', label: 'Escrow Outbound Workbench', icon: Sliders },
+          { id: 'approvals', label: `Multi-Sig Approval Queue (${approvalTasks.filter(t => t.status === 'pending').length})`, icon: FileCheck },
+          { id: 'industries', label: 'Marketplace Escrow Verticals', icon: Briefcase },
+          { id: 'risk_engine', label: 'Escrow Risk & Hold Control', icon: ShieldAlert }
         ].map((tab) => {
           const Icon = tab.icon;
           const isActive = subTab === tab.id;

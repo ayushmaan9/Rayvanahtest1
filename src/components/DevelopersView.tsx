@@ -143,8 +143,8 @@ export default function DevelopersView() {
               <div className="space-y-2">
                 <p className="text-[10px] font-bold text-neutral-400 uppercase tracking-wider">Subscribed Event Triggers</p>
                 <div className="flex flex-wrap gap-1.5">
-                  {['payment.succeeded', 'payment.failed', 'customer.created', 'subscription.updated'].map(ev => (
-                    <span key={ev} className="text-[10px] font-mono font-medium bg-indigo-50 text-indigo-700 px-2 py-0.5 rounded-md border border-indigo-100">
+                  {['escrow.fund_locked', 'escrow.milestone_approved', 'escrow.disbursed', 'escrow.lien_placed', 'escrow.reconciliation_matched'].map(ev => (
+                    <span key={ev} className="text-[10px] font-mono font-medium bg-emerald-50 text-emerald-800 px-2 py-0.5 rounded-md border border-emerald-100">
                       {ev}
                     </span>
                   ))}

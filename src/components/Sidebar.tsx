@@ -22,17 +22,17 @@ interface SidebarProps {
 
 export default function Sidebar({ currentTab, onTabChange }: SidebarProps) {
   const customTabs = [
-    { id: 'collections', label: 'Collections (Pay-In)', icon: ArrowLeftRight, badge: 'GATEWAY' },
-    { id: 'payouts', label: 'Payouts (Pay-Out)', icon: TrendingDown, badge: 'CORE' },
-    { id: 'treasury', label: 'Treasury Analytics', icon: Wallet },
-    { id: 'customers', label: 'Customers & CRM', icon: Users },
-    { id: 'risk', label: 'Risk Intelligence', icon: ShieldAlert },
-    { id: 'compliance', label: 'Compliance & KYC', icon: Scale },
-    { id: 'users', label: 'User Module (Access)', icon: UserCheck, badge: 'ACCESS' },
-    { id: 'analytics', label: 'System Analytics', icon: BarChart3 },
-    { id: 'copilot', label: 'AI Copilot', icon: Sparkles, highlight: true },
-    { id: 'developers', label: 'Developers API', icon: Code2 },
-    { id: 'settings', label: 'Operating Settings', icon: Settings2 },
+    { id: 'collections', label: 'Escrow Collections (Pay-In)', icon: ArrowLeftRight, badge: 'ESCROW IN' },
+    { id: 'payouts', label: 'Escrow Payouts (Disburse)', icon: TrendingDown, badge: 'ESCROW OUT' },
+    { id: 'treasury', label: 'Nodal Escrow Treasury', icon: Wallet, badge: 'RBI NODAL' },
+    { id: 'customers', label: 'Escrow Merchants & CRM', icon: Users },
+    { id: 'risk', label: 'Escrow Lien & Risk Control', icon: ShieldAlert },
+    { id: 'compliance', label: 'RBI Escrow & PA Compliance', icon: Scale },
+    { id: 'users', label: 'Multi-Sig Access & Maker-Checker', icon: UserCheck, badge: 'MULTI-SIG' },
+    { id: 'analytics', label: 'Escrow Velocity Analytics', icon: BarChart3 },
+    { id: 'copilot', label: 'Escrow AI Copilot', icon: Sparkles, highlight: true },
+    { id: 'developers', label: 'Escrow API & Webhooks', icon: Code2 },
+    { id: 'settings', label: 'Escrow Vault Settings', icon: Settings2 },
   ];
 
   return (
@@ -44,7 +44,7 @@ export default function Sidebar({ currentTab, onTabChange }: SidebarProps) {
         </div>
         <div>
           <h1 className="font-semibold text-white text-md tracking-tight leading-none bg-gradient-to-r from-neutral-50 to-neutral-200 bg-clip-text text-transparent">Rayvaanah</h1>
-          <p className="text-[10px] text-teal-400 font-semibold uppercase tracking-widest mt-1">Merchant OS</p>
+          <p className="text-[10px] text-emerald-400 font-semibold uppercase tracking-widest mt-1">Escrow Merchant OS</p>
         </div>
       </div>
 

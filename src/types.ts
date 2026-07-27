@@ -202,3 +202,173 @@ export interface AdminUser {
   roleDescription: string;
 }
 
+// ==========================================
+// ONBOARDING & COMPLIANCE TYPES
+// ==========================================
+
+export interface MerchantDirector {
+  id: string;
+  fullName: string;
+  designation: string;
+  din: string;
+  pan: string;
+  aadhaar: string;
+  email: string;
+  mobile: string;
+  address: string;
+  nationality: string;
+  shareholdingPct: number;
+  panDocUrl?: string;
+  aadhaarDocUrl?: string;
+  photoUrl?: string;
+  isKycVerified: boolean;
+}
+
+export interface MerchantDoc {
+  id: string;
+  docType: 'gst_certificate' | 'corporate_pan' | 'coi' | 'moa' | 'aoa' | 'cancelled_cheque' | 'bank_statement' | 'office_photos' | 'utility_bill' | 'additional_license';
+  title: string;
+  fileName: string;
+  fileSize: string;
+  uploadDate: string;
+  status: 'pending' | 'verified' | 'rejected' | 'ocr_extracted';
+  ocrData?: {
+    legalName?: string;
+    panOrGst?: string;
+    issueDate?: string;
+    addressMatch?: boolean;
+    extractedTextSnippet?: string;
+  };
+  rejectionReason?: string;
+}
+
+export interface WebsiteAuditResult {
+  isHttps: boolean;
+  sslValid: boolean;
+  dnsResolved: boolean;
+  domainAgeYears: number;
+  isAccessible: boolean;
+  isMobileFriendly: boolean;
+  businessNameMatch: boolean;
+  contactMatch: boolean;
+  policyPrivacy: boolean;
+  policyRefund: boolean;
+  policyTerms: boolean;
+  policyShipping: boolean;
+  overallHealthScore: number; // 0-100
+}
+
+export interface BankVerificationResult {
+  bankName: string;
+  branch: string;
+  ifsc: string;
+  accountNumber: string;
+  beneficiaryName: string;
+  upiId?: string;
+  pennyDropStatus: 'verified' | 'pending' | 'failed';
+  pennyDropTxnId: string;
+  pennyDropAmount: number;
+  nameMatchScore: number; // e.g. 98.4%
+  isVerified: boolean;
+}
+
+export interface AIPreScreenResult {
+  readinessScore: number; // 0-100
+  commercialFitScore: number; // 0-100
+  riskLevel: 'green' | 'amber' | 'red';
+  legitimacyScore: number;
+  policyCompletenessScore: number;
+  restrictedProductsDetected: boolean;
+  restrictedKeywordsFound: string[];
+  missingDocs: string[];
+  fraudIndicators: string[];
+  recommendations: string[];
+}
+
+export interface AuditLogEntry {
+  id: string;
+  timestamp: string;
+  actor: string; // e.g. "Compliance Officer R. Sharma" or "AI System Pre-Screen"
+  action: string;
+  notes: string;
+  statusTag?: string;
+}
+
+export interface MerchantApplication {
+  id: string;
+  referenceId: string;
+  merchantId?: string;
+  currentStep: number; // 1-9
+  status: 'draft' | 'submitted' | 'under_review' | 'kyb_pending' | 'compliance_review' | 'risk_assessment' | 'deficiency_raised' | 'approved' | 'rejected';
+  
+  // Step 1: Business Profile
+  legalBusinessName: string;
+  tradeName: string;
+  entityType: 'private_limited' | 'llp' | 'sole_proprietorship' | 'public_limited' | 'partnership';
+  category: string;
+  subCategory: string;
+  mcc: string;
+  description: string;
+  dateOfIncorporation: string;
+  gstNumber: string;
+  panNumber: string;
+  cin: string;
+  officialEmail: string;
+  supportEmail: string;
+  supportPhone: string;
+  registeredAddress: string;
+  operatingAddress: string;
+
+  // Step 2: Operations
+  monthlyTpvEst: number;
+  dailyTpvEst: number;
+  avgOrderValue: number;
+  maxOrderValue: number;
+  isDomestic: boolean;
+  isInternational: boolean;
+  settlementPreference: 't0_instant' | 't1_next_day' | 'escrow_milestone';
+  isMarketplace: boolean;
+  isSubscription: boolean;
+  isHighRiskCategory: boolean;
+  deliveryTimelineDays: string;
+  refundTimelineDays: string;
+  supportedCurrencies: string[];
+
+  // Step 3: Website & Digital
+  websiteUrl: string;
+  checkoutUrl: string;
+  webhookUrl: string;
+  privacyPolicyUrl: string;
+  refundPolicyUrl: string;
+  shippingPolicyUrl: string;
+  termsUrl: string;
+  socialLinkedin?: string;
+  socialX?: string;
+  websiteAudit?: WebsiteAuditResult;
+
+  // Step 4 & 5: Documents & Directors
+  documents: MerchantDoc[];
+  directors: MerchantDirector[];
+
+  // Step 6: Bank
+  bankInfo?: BankVerificationResult;
+
+  // Step 7: Declarations & e-Sign
+  declarationsAccepted: boolean;
+  eSignatureName: string;
+  signedAtDate: string;
+  ipAddress: string;
+  browserFingerprint: string;
+
+  // Step 8: AI Pre-Screen
+  aiPreScreen?: AIPreScreenResult;
+
+  // Audit Logs & Timeline
+  auditLogs: AuditLogEntry[];
+  submittedAt?: string;
+  reviewedAt?: string;
+  reviewedBy?: string;
+  deficiencyNotes?: string;
+}
+
+
