@@ -1,0 +1,6 @@
+{
+  "name": "Rayvaanah Merchant OS",
+  "description": "A premium full-scale Merchant CRM and operating system platform containing customer 360, ledger logs, dunning analytics, and treasury rules.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
